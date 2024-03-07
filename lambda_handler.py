@@ -7,7 +7,7 @@ def lambda_handler(event, context):
     # Initialize variables with descriptive names
     bucket_name = event['Records'][0]['s3']['bucket']['name']
     object_key = event['Records'][0]['s3']['object']['key']
-    error_bucket_name = 'error-report-february'  # Maintain consistency
+    error_bucket_name = 'bucket_name' # provide a unique name for error buckets
 
     # Create an S3 client object for better performance (optional)
     s3_client = boto3.client('s3')  # Consider using client for bulk operations
